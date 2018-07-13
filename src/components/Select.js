@@ -146,8 +146,6 @@ function DynamicSelect(props) {
 function SelectWrapped(props) {
   const { classes, ...other } = props;
 
-  console.log(props.creatable);
-
   return (
     <DynamicSelect
       placeholder="Choisissez..."

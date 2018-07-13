@@ -342,7 +342,7 @@ class Demo extends React.Component {
           value={this.state.multiLabelCreatable}
           onChange={this.handleChange("multiLabelCreatable")}
           placeholder="Choisissez plusieurs pays..."
-          name="react-select-chip-label"
+          name="react-select-chip-label-creatable"
           label="Avec un label + possibilité de créer des éléments à la volée"
           InputLabelProps={{
             shrink: true
@@ -353,8 +353,8 @@ class Demo extends React.Component {
               classes,
               multi: true,
               creatable: true,
-              instanceId: "react-select-chip-label",
-              id: "react-select-chip-label",
+              instanceId: "react-select-chip-label-creatable",
+              id: "react-select-chip-label-creatable",
               simpleValue: true,
               options: suggestions
             }
