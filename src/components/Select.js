@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -23,7 +22,6 @@ const styles = theme => ({
       alignItems: "center",
       border: 0,
       height: "auto",
-      outline: false,
       background: "transparent",
       "&:hover": {
         boxShadow: "none"
@@ -142,8 +140,13 @@ function SelectWrapped(props) {
 
   return (
     <Select.Creatable
+      placeholder="Choisissez..."
       optionComponent={Option}
-      noResultsText={<Typography>{"Aucun résultat correspondant"}</Typography>}
+      searchPromptText={<Typography>{"Tapez pour rechercher"}</Typography>}
+      noResultsText={<Typography>{"Aucun résultat"}</Typography>}
+      clearAllText="Tout retirer"
+      clearValueText="Retirer la valeur"
+      promptTextCreator={label => `Créer ${label} ?`}
       arrowRenderer={arrowProps => {
         return arrowProps.isOpen ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />;
       }}
