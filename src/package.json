@@ -1,0 +1,15 @@
+{
+  "title": "Material demo",
+  "description":
+    "https://github.com/mui-org/material-ui/tree/master/docs/src/pages/demos/autocomplete/IntegrationReactSelect.js",
+  "dependencies": {
+    "react-select": "latest",
+    "react-dom": "latest",
+    "react": "latest",
+    "prop-types": "latest",
+    "@material-ui/icons": "latest",
+    "@material-ui/core": "latest"
+  },
+  "keywords": ["material-ui", "react-select", "select", "material", "reactjs"],
+  "name": "material-ui-styled-react-select-craetable-support-french-version"
+}
