@@ -12,6 +12,7 @@ import "react-select/dist/react-select.css";
 
 const ITEM_HEIGHT = 48;
 
+// reset CSS + add material ui
 const styles = theme => ({
   chip: {
     margin: theme.spacing.unit / 4
@@ -135,11 +136,20 @@ class Option extends React.Component {
   }
 }
 
+function DynamicSelect(props) {
+  if (props.creatable) {
+    return <Select.Creatable {...props} />;
+  }
+  return <Select {...props} />;
+}
+
 function SelectWrapped(props) {
   const { classes, ...other } = props;
 
+  console.log(props.creatable);
+
   return (
-    <Select.Creatable
+    <DynamicSelect
       placeholder="Choisissez..."
       optionComponent={Option}
       searchPromptText={<Typography>{"Tapez pour rechercher"}</Typography>}

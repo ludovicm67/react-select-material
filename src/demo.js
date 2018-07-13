@@ -3,6 +3,7 @@ import Select from "./components/Select";
 import Input from "@material-ui/core/Input";
 import TextField from "@material-ui/core/TextField";
 
+// all countries
 const suggestions = [
   { label: "Afghanistan (AF)" },
   { label: "Afrique du Sud (ZA)" },
@@ -268,7 +269,8 @@ class Demo extends React.Component {
   state = {
     single: null,
     multi: null,
-    multiLabel: null
+    multiLabel: null,
+    multiLabelCreatable: null
   };
 
   handleChange = name => value => {
@@ -328,6 +330,29 @@ class Demo extends React.Component {
             inputProps: {
               classes,
               multi: true,
+              instanceId: "react-select-chip-label",
+              id: "react-select-chip-label",
+              simpleValue: true,
+              options: suggestions
+            }
+          }}
+        />
+        <TextField
+          fullWidth
+          value={this.state.multiLabelCreatable}
+          onChange={this.handleChange("multiLabelCreatable")}
+          placeholder="Choisissez plusieurs pays..."
+          name="react-select-chip-label"
+          label="Avec un label + possibilité de créer des éléments à la volée"
+          InputLabelProps={{
+            shrink: true
+          }}
+          InputProps={{
+            inputComponent: Select,
+            inputProps: {
+              classes,
+              multi: true,
+              creatable: true,
               instanceId: "react-select-chip-label",
               id: "react-select-chip-label",
               simpleValue: true,
